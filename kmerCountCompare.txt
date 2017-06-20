@@ -1,0 +1,8 @@
+# Allmaps configuration file
+pythonPath = /global/dna/projectdirs/plant/pangenomics/python_modules
+systemPath = /usr/common/usg/languages/python/2.7.4/bin/python
+fastaInputName = BhybridumBd28S_581_v1.0.softmasked.fa
+fastaOutputName = FastaFileOutputsDsubgenome
+UnOutPath = ./
+SortPath = ./sort_files/
+loci_threshold = 4
