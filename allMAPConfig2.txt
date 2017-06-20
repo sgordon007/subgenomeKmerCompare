@@ -1,0 +1,10 @@
+# Allmaps configuration file
+pythonPath = /global/dna/projectdirs/plant/pangenomics/python_modules
+systemPath = /usr/common/usg/languages/python/2.7.4/bin/python
+bedPath = /global/projectb/scratch/sgordon/joshua/sean_Bd28_synteny/BdFiles/
+allMAPImageOutputPath = /global/projectb/scratch/sgordon/joshua/sean_Bd28_synteny/allMAPSAnalysis/ALLMAPS_Chromosome_Images/
+fastaInputName = BhybridumBd28S_581_v1.0.softmasked.fa
+fastaOutputName = FastaFileOutputsDsubgenome
+UnOutPath = /global/projectb/scratch/sgordon/joshua/sean_Bd28_synteny/UnOutFiles/
+SortPath = /global/projectb/scratch/sgordon/joshua/sean_Bd28_synteny/SortFiles/
+loci_threshold = 4
