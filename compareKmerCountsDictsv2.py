@@ -13,20 +13,18 @@ def parseConfigFindPath(stringFind,configFile):
 
 # system path to find allmaps installation files
 path = parseConfigFindPath('systemPath',configFile)
-kmercountPath = parseConfigFindPath('SortPath',configFile)
+kmercountPath = parseConfigFindPath('kmercountPath',configFile)
 kmercountFiles = filter(None,str(subprocess.Popen(['ls', '%s' % kmercountPath], stdout=subprocess.PIPE, stderr=subprocess.PIPE).stdout.read()).split('\n'))
 
 
 def kmercounttodict(kmercount2fname,kmercountPath):
-    """Change kmercount2 into a dictionary object with keys being genes of species kmercount2, allows for ease of access of data"""
+    """ kmercounttodict function creates kmer : count key value pairs, takes path and file name of a kmer count file"""
     inputFile = open(kmercountPath+kmercount2fname,'r')
     dictConverted = {}
     for line in inputFile:
         if line:
             lineList = line.split()
-            """dictionary w/ key gene --> (chr,xi,xf)"""
             dictConverted[lineList[0]]=(int(lineList[1].strip('\n')))
-            # print lineList[0] + lineList[1]
     inputFile.close()
     return dictConverted
 
@@ -35,8 +33,6 @@ for file in kmercountFiles:
     # creates a dictionary that associates a species to its dictionary of the kmer : count key value pairs
     # kmercounttodict function is called to create the kmer : count key value pairs
     dictOfGenes[file.split('.')[0]] = kmercounttodict(file,kmercountPath)
-    # what does this print, test
-    # print file.split('.')[0]
 
 # we now have two dictionaries (or more if we add more than two kmer count files to the kmercount_files path
 # now compare the two dictionaries in both directions to find kmers that are high in kmer dict 1 and low in kmer dict 2 and vice versa
